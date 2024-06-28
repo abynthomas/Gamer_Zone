@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      {% load static %}
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}" />
+
+    <style>
+.buttonhome {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 15px;
+  padding: 16px;
+  width: 120px;
+  position:absolute;
+  left:1550px;
+  top:70px;
+
+}
+.button3 {
+  background-color: #f44336;
+  color: white;
+  border: 2px solid #f44336;
+}
+
+.button3:hover {
+  background-color: white;
+  color: black;
+}
+
+      .logo{
+      position:absolute;
+      top:40px;
+      left:100px;
+      height:150px;
+      width:150px;
+      }
+    </style>
+
+
+    <title>RESET PASSWORD</title>
+  </head>
+<body>
+    <div class="login">
+      <video id="video1" autoplay muted loop>
+        <source src="{% static 'assets/video/fr.mp4' %}" type="video/mp4" />
+      </video>
+
+      <img class="logo" src="{% static 'assets/image/logo.png' %}" alt="">
+
+      <a href="/"><button class="buttonhome button3">Home</button></a>
+
+
+        <center>
+      {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-success{% endif %}" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+      </center>
+
+
+
+
+<form action="" method="post">
+    {% csrf_token %}
+<h1 class="head">RESET PASSWORD</h1>
+
+
+    <div class="content">
+          <div class="box">
+            <i class="ri-lock-2-line login__icon"></i>
+
+            <div class="box-input">
+              <input
+                type="text"
+                name="newpassword"
+                required
+                class="input"
+                placeholder=" "
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
+              />
+              <label class="login__label">New Password</label>
+            </div>
+          </div>
+
+          <div class="box">
+            <i class="ri-lock-2-line login__icon"></i>
+
+            <div class="box-input">
+              <input
+                type="text"
+                name="cpassword"
+                required
+                class="input"
+                placeholder=" "
+              />
+              <label  class="login__label">Confirm Password</label>
+            </div>
+          </div>
+        </div>
+
+
+
+        <button type="submit" class="button">Set New Password</button>
+
+      </form>
+    </div>
+
+
+
+    <script src="{% static 'assets/js/main.js' %}"></script>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>Gamer Zone</title>
+
+ 		<!-- Google font -->
+ 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+ 		<!-- Bootstrap -->
+ 		<link type="text/css" rel="stylesheet" href="static/css/bootstrap.min.css"/>
+
+ 		<!-- Slick -->
+ 		<link type="text/css" rel="stylesheet" href="static/css/slick.css"/>
+ 		<link type="text/css" rel="stylesheet" href="static/css/slick-theme.css"/>
+
+ 		<!-- nouislider -->
+ 		<link type="text/css" rel="stylesheet" href="static/css/nouislider.min.css"/>
+
+ 		<!-- Font Awesome Icon -->
+ 		<link rel="stylesheet" href="static/css/font-awesome.min.css">
+
+ 		<!-- Custom stlylesheet -->
+ 		<link type="text/css" rel="stylesheet" href="static/css/style.css"/>
+
+		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    </head>
+	<body>
+		<!-- HEADER -->
+
+		<header>
+			<!-- TOP HEADER -->
+			<div id="top-header">
+				<div class="container">
+				</div>
+			</div>
+			<!-- /TOP HEADER -->
+
+			<!-- MAIN HEADER -->
+			<div id="header">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<div class="col-md-2">
+									<img src="static/assets/image/logo.png" height="150" width="150"  alt="">
+						<!-- /LOGO -->
+
+						<!-- SEARCH BAR -->
+						<div class="col-md-6">
+
+							</div>
+						</div>
+
+						<!-- ACCOUNT -->
+						<div class="col-md-9 " style="left:350px" >
+							<div class="header-ctn">
+								<!-- Wishlist -->
+
+								<div>
+									<a href="admin_home">
+										<i class="fa fa-home"></i>
+										<span>Home</span>
+									</a>
+								</div>
+
+								<div>
+									<a href="admin_user">
+										<i class="fa fa-shopping-basket"></i>
+										<span>Orders</span>
+									</a>
+								</div>
+
+								<div>
+									<a href="admin_recent_orders">
+										<i class="fa fa-shopping-bag"></i>
+										<span>Recent Orders</span>
+									</a>
+								</div>
+
+								<div>
+									<a href="admin_view_users">
+										<i class="fa fa-group"></i>
+										<span>Users</span>
+									</a>
+								</div>
+
+								<div>
+									<a href="admin_messages">
+										<i class="fa fa-comment"></i>
+										<span>Messages</span>
+									</a>
+								</div>
+
+								<div>
+									<a href="admin_user_mail">
+										<i class="fa fa-envelope"></i>
+										<span>Subscribers</span>
+									</a>
+								</div>
+
+                                <div>
+									<a href="logout">
+										<i class="fa fa-power-off"></i>
+										<span>LogOut</span>
+									</a>
+								</div>
+
+								<!-- /Menu Toogle -->
+							</div>
+						</div>
+						<!-- /ACCOUNT -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- container -->
+			</div>
+			<!-- /MAIN HEADER -->
+		</header>
+		<!-- /HEADER -->
+
+		<!-- NAVIGATION -->
+		<nav id="navigation">
+			<!-- container -->
+			<div class="container">
+				<!-- responsive-nav -->
+				<!-- /responsive-nav -->
+			</div>
+			<!-- /container -->
+		</nav>
+		<!-- /NAVIGATION -->
+
+		<!-- BREADCRUMB -->
+		<div id="breadcrumb" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<h1 class="breadcrumb-header">Orders</h1>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /BREADCRUMB -->
+
+		<!-- SECTION -->
+<div class="section">
+			<!-- container -->
+			<div class="container" style="width:1500px;">
+				<!-- row -->
+				<div class="row">
+
+
+					<center><h3 style="padding-bottom:20px;">New Orders</h3></center>
+						<table class="table">
+    <thead style="font-size: 18px;color:red;">
+    <tr>
+		<th>User</th>
+        <th>Product Details</th>
+		<th>Shipping Details</th>
+		<th>Payment Status</th>
+		<th>Order Status</th>
+        <th>Update Status</th>
+
+    </tr>
+    </thead>
+							    {% for i in data %}
+    <tbody>
+	{% if i.product_status == 'Order Placed' %}
+	<tr>
+		<td style="width:200px;"><h4 style="padding-top:10px;">{{i.user}}</h4></td>
+		<td style="width:600px;">
+			<img src="{{i.product_order.picture.url}}" style="width:150px;">
+			<h4 style="padding-top:10px;">Product:</h4><p style="font-size:18px;">{{i.product_order.product_name}}</p>
+			<h4 style="padding-top:3px;float:left;padding-right:10px;">Quantity :</h4><p style="font-size:18px;">{{i.quantity}}</p>
+			<h4 style="padding-top:3px;float:left;padding-right:10px;">Total Price :</h4><p style="font-size:18px;">{{i.total_price}}</p>
+			<h4 style="padding-top:3px;float:left;padding-right:10px;">Date of Purchase :</h4><p style="font-size:18px;">{{i.purchase_date}}</p>
+			<br>
+			<br>
+			<br>
+		</td>
+		<td style="width:500px;">
+			<h4 style="padding-top:10px;">Name:</h4><p style="font-size:18px;">{{i.name}}</p>
+			<h4 style="padding-top:3px;">Phone:</h4><p style="font-size:18px;">{{i.phone}}</p>
+			<h4 style="padding-top:3px;">Address:</h4><p style="font-size:18px;">{{i.address}}, {{i.city}}, {{i.state}}, {{i.country}}, {{i.zip_code}}</p>
+			<h4 style="padding-top:3px;">Notes:</h4><p style="font-size:18px;">{{i.notes}}</p><br><br>
+		</td>
+				<td style="width:250px;"><h4 style="padding-top:10px;">{{i.payment_status}}</h4></td>
+		<td style="width:300px;">
+			<h4 style="padding-top:10px;">{{i.product_status}}</h4><br>
+			<p style="font-size:18px;">{{i.instruction}}</p>
+		</td>
+		<td style="font-size:15px;width:200px;padding-top:10px;"><a href="admin_order_update/{{i.pk}}"><button  class="primary-btn order-submit">Update</button></a></td>
+    </tr>
+	{% endif %}
+    </tbody>
+							 {% endfor %}
+</table>
+
+
+
+					<center><h3 style="padding-bottom:20px;padding-top:50px;">Preparing Orders</h3></center>
+						<table class="table">
+    <thead style="font-size: 18px;color:red;">
+    <tr>
+		<th>User</th>
+        <th>Product Details</th>
+		<th>Shipping Details</th>
+		<th>Order Status</th>
+        <th>Update Status</th>
+
+    </tr>
+    </thead>
+								{% for i in data1 %}
+    <tbody>
+	{% if i.product_status == 'Preparing' %}
+	<tr>
+		<td style="width:200px;"><h4 style="padding-top:10px;">{{i.user}}</h4></td>
+		<td style="width:600px;">
+			<img src="{{i.product_order.picture.url}}" style="width:150px;">
+			<h4 style="padding-top:10px;">Product:</h4><p style="font-size:18px;">{{i.product_order.product_name}}</p>
+			<h4 style="padding-top:3px;float:left;padding-right:10px;">Quantity :</h4><p style="font-size:18px;">{{i.quantity}}</p>
+			<h4 style="padding-top:3px;float:left;padding-right:10px;">Total Price :</h4><p style="font-size:18px;">{{i.total_price}}</p>
+			<h4 style="padding-top:3px;float:left;padding-right:10px;">Date of Purchase :</h4><p style="font-size:18px;">{{i.purchase_date}}</p>
+			<br>
+			<br>
+			<br>
+		</td>
+		<td style="width:500px;">
+			<h4 style="padding-top:10px;">Name:</h4><p style="font-size:18px;">{{i.name}}</p>
+			<h4 style="padding-top:3px;">Phone:</h4><p style="font-size:18px;">{{i.phone}}</p>
+			<h4 style="padding-top:3px;">Address:</h4><p style="font-size:18px;">{{i.address}}, {{i.city}}, {{i.state}}, {{i.country}}, {{i.zip_code}}</p>
+			<h4 style="padding-top:3px;">Notes:</h4><p style="font-size:18px;">{{i.notes}}</p><br><br>
+		</td>
+		<td style="width:300px;">
+			<h4 style="padding-top:10px;">{{i.product_status}}</h4><br>
+			<p style="font-size:18px;">{{i.instruction}}</p>
+		</td>
+		<td style="font-size:15px;width:200px;padding-top:10px;"><a href="admin_order_update/{{i.pk}}"><button  class="primary-btn order-submit">Update</button></a></td>
+    </tr>
+{% endif %}
+    </tbody>
+{% endfor %}
+</table>
+
+
+
+
+					<center><h3 style="padding-bottom:20px;padding-top:50px;">Packing Orders</h3></center>
+						<table class="table">
+
+
+
+    <thead style="font-size: 18px;color:red;">
+    <tr>
+		<th>User</th>
+        <th>Product Details</th>
+		<th>Shipping Details</th>
+		<th>Order Status</th>
+        <th>Update Status</th>
+
+    </tr>
+    </thead>
+							{% for i in data2 %}
+    <tbody>
+{% if i.product_status == 'Packing' %}
+		<tr>
+		<td style="width:200px;"><h4 style="padding-top:10px;">{{i.user}}</h4></td>
+		<td style="width:600px;">
+			<img src="{{i.product_order.picture.url}}" style="width:150px;">
+			<h4 style="padding-top:10px;">Product:</h4><p style="font-size:18px;">{{i.product_order.product_name}}</p>
+			<h4 style="padding-top:3px;float:left;padding-right:10px;">Quantity :</h4><p style="font-size:18px;">{{i.quantity}}</p>
+			<h4 style="padding-top:3px;float:left;padding-right:10px;">Total Price :</h4><p style="font-size:18px;">{{i.total_price}}</p>
+			<h4 style="padding-top:3px;float:left;padding-right:10px;">Date of Purchase :</h4><p style="font-size:18px;">{{i.purchase_date}}</p>
+			<br>
+			<br>
+			<br>
+		</td>
+		<td style="width:500px;">
+			<h4 style="padding-top:10px;">Name:</h4><p style="font-size:18px;">{{i.name}}</p>
+			<h4 style="padding-top:3px;">Phone:</h4><p style="font-size:18px;">{{i.phone}}</p>
+			<h4 style="padding-top:3px;">Address:</h4><p style="font-size:18px;">{{i.address}}, {{i.city}}, {{i.state}}, {{i.country}}, {{i.zip_code}}</p>
+			<h4 style="padding-top:3px;">Notes:</h4><p style="font-size:18px;">{{i.notes}}</p><br><br>
+		</td>
+		<td style="width:300px;">
+			<h4 style="padding-top:10px;">{{i.product_status}}</h4><br>
+			<p style="font-size:18px;">{{i.instruction}}</p>
+		</td>
+		<td style="font-size:15px;width:200px;padding-top:10px;"><a href="admin_order_update/{{i.pk}}"><button  class="primary-btn order-submit">Update</button></a></td>
+    </tr>
+{% endif %}
+    </tbody>
+
+{% endfor %}
+</table>
+
+
+
+					<center><h3 style="padding-bottom:20px;padding-top:50px;">Order Ready</h3></center>
+						<table class="table">
+
+
+    <thead style="font-size: 18px;color:red;">
+    <tr>
+		<th>User</th>
+        <th>Product Details</th>
+		<th>Shipping Details</th>
+		<th>Order Status</th>
+        <th>Update Status</th>
+
+    </tr>
+    </thead>
+							{% for i in data3 %}
+    <tbody>
+{% if i.product_status == 'Ready For Delivery' %}
+	<tr>
+		<td style="width:200px;"><h4 style="padding-top:10px;">{{i.user}}</h4></td>
+		<td style="width:600px;">
+			<img src="{{i.product_order.picture.url}}" style="width:150px;">
+			<h4 style="padding-top:10px;">Product:</h4><p style="font-size:18px;">{{i.product_order.product_name}}</p>
+			<h4 style="padding-top:3px;float:left;padding-right:10px;">Quantity :</h4><p style="font-size:18px;">{{i.quantity}}</p>
+			<h4 style="padding-top:3px;float:left;padding-right:10px;">Total Price :</h4><p style="font-size:18px;">{{i.total_price}}</p>
+			<h4 style="padding-top:3px;float:left;padding-right:10px;">Date of Purchase :</h4><p style="font-size:18px;">{{i.purchase_date}}</p>
+			<br>
+			<br>
+			<br>
+		</td>
+		<td style="width:500px;">
+			<h4 style="padding-top:10px;">Name:</h4><p style="font-size:18px;">{{i.name}}</p>
+			<h4 style="padding-top:3px;">Email:</h4><p style="font-size:18px;">{{i.email}}</p>
+			<h4 style="padding-top:3px;">Phone:</h4><p style="font-size:18px;">{{i.phone}}</p>
+			<h4 style="padding-top:3px;">Address:</h4><p style="font-size:18px;">{{i.address}}, {{i.city}}, {{i.state}}, {{i.country}}, {{i.zip_code}}</p>
+			<h4 style="padding-top:3px;">Notes:</h4><p style="font-size:18px;">{{i.notes}}</p><br><br>
+		</td>
+		<td style="width:300px;">
+			<h4 style="padding-top:10px;">{{i.product_status}}</h4><br>
+			<p style="font-size:18px;">{{i.instruction}}</p>
+		</td>
+		<td style="font-size:15px;width:200px;padding-top:10px;"><a href="admin_order_update/{{i.pk}}"><button  class="primary-btn order-submit">Update</button></a></td>
+    </tr>
+
+{% endif %}
+    </tbody>
+
+							{% endfor %}
+</table>
+
+
+					<center><h3 style="padding-bottom:20px;padding-top:50px;">Order Out For Delivery</h3></center>
+						<table class="table">
+
+    <thead style="font-size: 18px;color:red;">
+    <tr>
+		<th>User</th>
+        <th>Product Details</th>
+		<th>Shipping Details</th>
+		<th>Order Status</th>
+        <th>Update Status</th>
+
+    </tr>
+    </thead>
+							{% for i in data4 %}
+
+    <tbody>
+{% if i.product_status == 'Out For Delivery' %}
+	<tr>
+		<td style="width:200px;"><h4 style="padding-top:10px;">{{i.user}}</h4></td>
+		<td style="width:600px;">
+			<img src="{{i.product_order.picture.url}}" style="width:150px;">
+			<h4 style="padding-top:10px;">Product:</h4><p style="font-size:18px;">{{i.product_order.product_name}}</p>
+			<h4 style="padding-top:3px;float:left;padding-right:10px;">Quantity :</h4><p style="font-size:18px;">{{i.quantity}}</p>
+			<h4 style="padding-top:3px;float:left;padding-right:10px;">Total Price :</h4><p style="font-size:18px;">{{i.total_price}}</p>
+			<h4 style="padding-top:3px;float:left;padding-right:10px;">Date of Purchase :</h4><p style="font-size:18px;">{{i.purchase_date}}</p>
+			<br>
+			<br>
+			<br>
+		</td>
+		<td style="width:500px;">
+			<h4 style="padding-top:10px;">Name:</h4><p style="font-size:18px;">{{i.name}}</p>
+			<h4 style="padding-top:3px;">Email:</h4><p style="font-size:18px;">{{i.email}}</p>
+			<h4 style="padding-top:3px;">Phone:</h4><p style="font-size:18px;">{{i.phone}}</p>
+			<h4 style="padding-top:3px;">Address:</h4><p style="font-size:18px;">{{i.address}}, {{i.city}}, {{i.state}}, {{i.country}}, {{i.zip_code}}</p>
+			<h4 style="padding-top:3px;">Notes:</h4><p style="font-size:18px;">{{i.notes}}</p><br><br>
+		</td>
+		<td style="width:300px;">
+			<h4 style="padding-top:10px;">{{i.product_status}}</h4><br>
+			<p style="font-size:18px;">{{i.instruction}}</p>
+		</td>
+		<td style="font-size:15px;width:200px;padding-top:10px;"><a href="admin_order_update/{{i.pk}}"><button  class="primary-btn order-submit">Update</button></a></td>
+    </tr>
+
+{% endif %}
+    </tbody>
+
+							 {% endfor %}
+</table>
+
+				</div>
+			</div>
+		</div>
+						<!-- Billing Details -->
+
+		<!-- /FOOTER -->
+
+		<!-- jQuery Plugins -->
+		<script src="static/js/jquery.min.js"></script>
+		<script src="static/js/bootstrap.min.js"></script>
+		<script src="static/js/slick.min.js"></script>
+		<script src="static/js/nouislider.min.js"></script>
+		<script src="static/js/jquery.zoom.min.js"></script>
+		<script src="static/js/main.js"></script>
+
+	</body>
+</html>

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>GAMER ZONE</title>
+
+ 		<!-- Google font -->
+ 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+ 		<!-- Bootstrap -->
+ 		<link type="text/css" rel="stylesheet" href="static/css/bootstrap.min.css"/>
+
+ 		<!-- Slick -->
+ 		<link type="text/css" rel="stylesheet" href="static/css/slick.css"/>
+ 		<link type="text/css" rel="stylesheet" href="static/css/slick-theme.css"/>
+
+ 		<!-- nouislider -->
+ 		<link type="text/css" rel="stylesheet" href="static/css/nouislider.min.css"/>
+
+ 		<!-- Font Awesome Icon -->
+ 		<link rel="stylesheet" href="static/css/font-awesome.min.css">
+
+ 		<!-- Custom stlylesheet -->
+ 		<link type="text/css" rel="stylesheet" href="static/css/style.css"/>
+
+ 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+ 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+ 		<!--[if lt IE 9]>
+ 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+ 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+ 		<![endif]-->
+<style>
+	.pos{
+			position:absolute;
+			top:78px;
+			padding-left:400px;
+			}
+</style>
+    </head>
+	<body>
+		<!-- HEADER -->
+		<header>
+			<!-- TOP HEADER -->
+			<div id="top-header">
+				<div class="container">
+					<ul class="header-links pull-left">
+						<li><a href="#"><i class="fa fa-phone"></i> +91-6238376619</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> gamerzone@gmail.com</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> Kerala / India</a></li>
+					</ul>
+					<ul class="header-links pull-right">
+						<li><a href="#"><i class="fa fa-rupee"></i> INR</a></li>
+						<li><a href="my_account"><i class="fa fa-user-o"></i> My Account</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- /TOP HEADER -->
+
+			<!-- MAIN HEADER -->
+			<div id="header">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<div class="">
+							<div class="header-logo">
+								<a href="#" class="logo">
+									<img src="static/assets/image/logo.png" height="150" width="150" alt="">
+								</a>
+							</div>
+						</div>
+						<!-- /LOGO -->
+<br>
+						<br>
+						<!-- SEARCH BAR -->
+
+						<!-- /SEARCH BAR -->
+
+						<!-- ACCOUNT -->
+							<div class="pos" style="left:200px">
+							<div class="header-ctn">
+								<!-- Wishlist -->
+								<div>
+									<div class="header-search">
+        <form action="../search" method="POST">
+            {% csrf_token %}
+            <select class="input-select" name="sc" id="categorySelect">
+                <option value="">All Category</option>
+                <option value="laptop">Laptop</option>
+	 			<option value="monitor">Monitor</option>
+	 			<option value="cpu">CPU</option>
+	 			<option value="playstation">Playstation</option>
+	 			<option value="xbox">Xbox</option>
+	 			<option value="nintendo">Nintendo</option>
+				<option value="accessories">Accessories</option>
+	 			<option value="furniture">Furniture</option>
+	 			<option value="games">Games</option>
+            </select>
+            <input class="input" style="width:350px;" placeholder="Search here" name="sb" id="searchInput">
+			<div style="position:absolute;top:0px;left:410px;">
+            <button type="submit" class="search-btn">Search</button>
+				</div>
+        </form>
+	</div>
+								</div>
+
+								<div style="padding-left:70px;">
+									<a href="{% url 'userhome' %}">
+										<i class="fa fa-home"></i>
+										<span>Home</span>
+<!--										<div class="qty">2</div>-->
+									</a>
+								</div>
+
+
+								<div>
+									<a href="{% url 'wishlist' %}">
+										<i class="fa fa-heart-o"></i>
+										<span>Wishlist</span>
+<!--										<div class="qty">2</div>-->
+									</a>
+								</div>
+								<!-- /Wishlist -->
+
+								<!-- Cart -->
+								<div>
+									<a href="{% url 'cart' %}">
+										<i class="fa fa-shopping-cart"></i>
+										<span>Cart</span>
+<!--										<div class="qty">2</div>-->
+									</a>
+								</div>
+
+								<div>
+									<a href="{% url 'user_recent_orders' %}">
+										<i class="fa fa-shopping-bag"></i>
+										<span>Recent Orders</span>
+									</a>
+								</div>
+
+
+								<div>
+									<a href="{% url 'logout' %}">
+										<i class="fa fa-power-off"></i>
+										<span>Logout</span>
+<!--										<div class="qty">2</div>-->
+									</a>
+								</div>
+
+							</div>
+						</div>
+						<!-- /ACCOUNT -->
+					</div>
+					<!-- row -->
+				</div>
+			</div>
+			<!-- /MAIN HEADER -->
+		</header>
+		<!-- /HEADER -->
+
+		<!-- NAVIGATION -->
+
+		<!-- /NAVIGATION -->
+
+		<!-- BREADCRUMB -->
+		<div id="breadcrumb" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="breadcrumb-header">Privacy & Policy</h3>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /BREADCRUMB -->
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<h3>WHO WE ARE</h3>
+					<br>
+					<p>GAMER ZONE (“we” or “us” or “our”) respects the privacy of our users (“user” or “you”). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, including any other media form, media channel, mobile website, or mobile application related or connected thereto (collectively, the “Site”). Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
+
+We reserve the right to make changes to this Privacy Policy at any time and for any reason. We will alert you about any changes by updating the “Last Updated” date of this Privacy Policy. Any changes or modifications will be effective immediately upon posting the updated Privacy Policy on the Site, and you waive the right to receive specific notice of each such change or modification.
+
+You are encouraged to periodically review this Privacy Policy to stay informed of updates. You will be deemed to have been made aware of, will be subject to, and will be deemed to have accepted the changes in any revised Privacy Policy by your continued use of the Site after the date such revised Privacy Policy is posted. This privacy policy was created using Termly.</p>
+					<br>
+					<br>
+					<h3>COLLECTION OF YOUR INFORMATION</h3>
+					<p>We may collect information about you in a variety of ways. The information we may collect on the Site includes:</p>
+<br>
+					<h4>Personal Data</h4>
+					<p>Personally identifiable information, such as your name, shipping address, email address, and telephone number, and demographic information, such as your age, gender, hometown, and interests, that you voluntarily give to us when you register with the Site or when you choose to participate in various activities related to the Site, such as online chat and message boards. You are under no obligation to provide us with personal information of any kind, however your refusal to do so may prevent you from using certain features of the Site</p>
+<br>
+					<h4>Derivative Data</h4>
+					<p>Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site. If you are using your mobile to access the site, this information may also include your device name and type, your operating system, your country, your likes and replies to a post, and other interactions with the application and other users via server log files, as well as any other information you choose to provide.</p>
+<br>
+					<h4>Financial Data</h4>
+					<p>Financial information, such as data related to your payment method (e.g. valid credit card number, card brand, expiration date) that we may collect when you purchase, order, return, exchange, or request information about our services from the Site.We store only very limited, if any, financial information that we collect.</p>
+<br>
+					<h4>Mobile Device Data</h4>
+					<p>Device information, such as your mobile device ID, model, and manufacturer, and information about the location of your device, if you access the Site from a mobile device.</p>
+<br>
+					<h4>Data From Contests, Giveaways, and Surveys</h4>
+					<p>Personal and other information you may provide when entering contests or giveaways and/or responding to surveys.</p>
+<br>
+					<br>
+					<h3>USE OF YOUR INFORMATION</h3>
+					<p>Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Site to:<br>
+
+- Administer sweepstakes, promotions, and contests.<br>
+- Assist law enforcement and respond to subpoena.<br>
+- Compile anonymous statistical data and analysis for use internally or with third parties.<br>
+- Create and manage your account.<br>
+- Deliver targeted advertising, coupons, newsletters, and other information regarding promotions and the Site to you.<br>
+- Email you regarding your account or order.<br>
+- Enable user-to-user communications.<br>
+- Fulfill and manage purchases, orders, payments, and other transactions related to the Site.<br>
+- Generate a personal profile about you to make future visits to the Site more personalized.<br>
+- Increase the efficiency and operation of the Site.<br>
+- Monitor and analyze usage and trends to improve your experience with the Site.<br>
+- Notify you of updates to the Site.<br>
+- Offer new products, services, and/or recommendations to you.<br>
+- Perform other business activities as needed.<br>
+- Prevent fraudulent transactions, monitor against theft, and protect against criminal activity.<br>
+- Process payments and refunds.<br>
+- Request feedback and contact you about your use of the Site.<br>
+- Resolve disputes and troubleshoot problems.<br>
+- Respond to product and customer service requests.<br>
+- Send you a newsletter.<br>
+- Solicit support for the Site.</p>
+<br>
+<br>
+					<h3>DISCLOSURE OF YOUR INFORMATION</h3>
+					<p>We may share information we have collected about you in certain situations. Your information may be disclosed as follows: </p>
+					<br>
+					<h4>By Law or to Protect Rights</h4>
+					<p>If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others, we may share your information as permitted or required by any applicable law, rule, or regulation. This includes exchanging information with other entities for fraud protection and credit risk reduction.</p>
+<br>
+					<h4>Third-Party Service Providers</h4>
+					<p>We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance. </p>
+<br>
+					<h4>Marketing Communications</h4>
+					<p>With your consent, or with an opportunity for you to withdraw consent, we may share your information with third parties for marketing purposes, as permitted by law.</p>
+<br>
+					<h4>Third-Party Advertisers</h4>
+					<p>We may use third-party advertising companies to serve ads when you visit the Site. These companies may use information about your visits to the Site and other websites that are contained in web cookies in order to provide advertisements about goods and services of interest to you.</p>
+<br>
+					<h4>Affiliates</h4>
+<p>We may share your information with our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include our parent company and any subsidiaries, joint venture partners or other companies that we control or that are under common control with us.</p>
+<br>
+					<h4>Business Partners</h4>
+					<p>We may share your information with our business partners to offer you certain products, services, or promotions.</p>
+					<br>
+					<h4>Social Media Contacts </h4>
+					<p>If you connect to the Site through a social network, your contacts on the social network will see your name, profile photo, and descriptions of your activity</p>
+					<br>
+					<h4>Other Third Parties</h4>
+					<p>We may share your information with advertisers and investors for the purpose of conducting general business analysis. We may also share your information with such third parties for marketing purposes, as permitted by law.</p>
+					<br>
+					<h4>Sale or Bankruptcy</h4>
+					<p>If we reorganize or sell all or a portion of our assets, undergo a merger, or are acquired by another entity, we may transfer your information to the successor entity. If we go out of business or enter bankruptcy, your information would be an asset transferred or acquired by a third party. You acknowledge that such transfers may occur and that the transferee may decline honor commitments we made in this Privacy Policy.</p>
+					<br>
+					<p>We are not responsible for the actions of third parties with whom you share personal or sensitive data, and we have no authority to manage or control third-party solicitations. If you no longer wish to receive correspondence, emails or other communications from third parties, you are responsible for contacting the third party directly.</p>
+					<br>
+					<br>
+					<h3>TRACKING TECHNOLOGIES</h3>
+					<br>
+					<h4>Cookies and Web Beacons</h4>
+					<p>We may use cookies, web beacons, tracking pixels, and other tracking technologies on the Site to help customize the Site and improve your experience. When you access the Site, your personal information is not collected through the use of tracking technology. Most browsers are set to accept cookies by default. You can remove or reject cookies but be aware that such action could affect the availability and functionality of the Site. You may not decline web beacons. However, they can be rendered ineffective by declining all cookies or by modifying your web browser’s settings to notify you each time a cookie is tendered, permitting you to accept or decline cookies on an individual basis.</p>
+<br>
+					<p>We may use cookies, web beacons, tracking pixels, and other tracking technologies on the Site to help customize the Site and improve your experience. For more information on how we use cookies, please refer to our Cookie Policy posted on the Site, which is incorporated into this Privacy Policy. By using the Site, you agree to be bound by our Cookie Policy.</p>
+<br>
+					<h4>Website Analytics</h4>
+					<p>We may also partner with selected third-party vendors, such as Google Analytics, to allow tracking technologies and remarketing services on the Site through the use of first party cookies and third-party cookies, to, among other things, analyze and track users’ use of the Site, determine the popularity of certain content and better understand online activity. By accessing the Site, you consent to the collection and use of your information by these third-party vendors. You are encouraged to review their privacy policy and contact them directly for responses to your questions. We do not transfer personal information to these third-party vendors.</p>
+<br>
+					<p>You should be aware that getting a new computer, installing a new browser, upgrading an existing browser, or erasing or otherwise altering your browser’s cookies files may also clear certain opt-out cookies, plug-ins, or settings.</p>
+<br>
+					<br>
+			<h3>SECURITY OF YOUR INFORMATION</h3>
+					<p>We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse. Any information disclosed online is vulnerable to interception and misuse by unauthorized parties. Therefore, we cannot guarantee complete security if you provide personal information.</p>
+<br>
+					<br>
+					<h3>POLICY FOR CHILDREN</h3>
+					<p>We do not knowingly solicit information from or market to children under the age of 13. If you become aware of any data we have collected from children under age 13, please contact us using the contact information provided in the website contact section.</p>
+<br>
+					<br>
+					<h3>OPTIONS REGARDING YOUR INFORMATION</h3>
+					<h4>[Account Information]</h4>
+					<p>You may at any time review or change the information in your account or terminate your account by:
+					<br><br>
+						- Logging into your account settings and updating your account<br>
+- Contacting us using the contact information provided below<br>
+- [Other]<br><br>
+						Upon your request to terminate your account, we will deactivate or delete your account and information from our active databases. However, some information may be retained in our files to prevent fraud, troubleshoot problems, assist with any investigations, enforce our Terms of Use and/or comply with legal requirements.]
+					</p>
+<br>
+					<h4>Emails and Communications</h4>
+					<p>If you no longer wish to receive correspondence, emails, or other communications from us, you may opt-out by:
+					<br>
+					<br>
+						- Noting your preferences at the time you register your account with the Site<br>
+- Logging into your account settings and updating your preferences.<br>
+- Contacting us using the contact information provided below<br><br>
+						If you no longer wish to receive correspondence, emails, or other communications from third parties, you are responsible for contacting the third party directly.
+					</p>
+
+
+
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- NEWSLETTER -->
+		<div id="newsletter" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="newsletter">
+							<p>Sign Up for the <strong>NEWSLETTER</strong></p>
+							<form action="mail" class="form" method="POST">
+								{% csrf_token %}
+								<input class="input" name="mail" type="email" placeholder="Enter Your Email"><button type="submit" class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+							</form>
+							<ul class="newsletter-follow">
+								<li>
+									<a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="https://twitter.com/i/flow/login"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="https://in.pinterest.com/"><i class="fa fa-pinterest"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /NEWSLETTER -->
+
+		<!-- FOOTER -->
+		<footer id="footer">
+			<!-- top footer -->
+			<div class="section">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">About Us</h3>
+								<p>Gamerzone is a digital entertainment retail and wholesale provider offering enhanced services for a variety of audiences and prides itself for takes pride in its diverse approaches and strategies exceeding customer expectations thereby providing a grab and play fun.</p>
+								<ul class="footer-links">
+									<li><a href="#"><i class="fa fa-map-marker"></i>Kerala / India</a></li>
+									<li><a href="#"><i class="fa fa-phone"></i>+91-6238376619</a></li>
+									<li><a href="#"><i class="fa fa-envelope-o"></i>gamerzone@gmail.com</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Categories</h3>
+								<ul class="footer-links">
+									<li><a href="user_laptop">Laptop</a></li>
+									<li><a href="user_monitor">Monitor</a></li>
+									<li><a href="user_cpu">CPU</a></li>
+									<li><a href="user_ps">Playstation</a></li>
+									<li><a href="user_xbox">Xbox</a></li>
+									<li><a href="user_switch">Nintendo Switch</a></li>
+									<li><a href="user_accessories">Accessories</a></li>
+									<li><a href="user_furniture">Furniture</a></li>
+									<li><a href="user_games">Games</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="clearfix visible-xs"></div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Information</h3>
+								<ul class="footer-links">
+									<li><a href="about_us">About Us</a></li>
+									<li><a href="contact_us">Contact Us</a></li>
+									<li><a href="privacy_policy">Privacy Policy</a></li>
+									<li><a href="terms_conditions">Terms & Conditions</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Service</h3>
+								<ul class="footer-links">
+									<li><a href="my_account">My Account</a></li>
+									<li><a href="cart">View Cart</a></li>
+									<li><a href="wishlist">Wishlist</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /top footer -->
+
+			<!-- bottom footer -->
+			<div id="bottom-footer" class="section">
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<ul class="footer-payments">
+								<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+								<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-discover"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-amex"></i></a></li>
+							</ul>
+
+						</div>
+					</div>
+						<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /bottom footer -->
+		</footer>
+		<!-- /FOOTER -->
+
+		<!-- jQuery Plugins -->
+		<script src="static/js/jquery.min.js"></script>
+		<script src="static/js/bootstrap.min.js"></script>
+		<script src="static/js/slick.min.js"></script>
+		<script src="static/js/nouislider.min.js"></script>
+		<script src="static/js/jquery.zoom.min.js"></script>
+		<script src="static/js/main.js"></script>
+
+	</body>
+</html>
